@@ -12,3 +12,4 @@
 | What        	| When          |
 | ------------- |---------------|
 | Initializing Git Repo + Creating a readme | 20-08-2019 |
+| Install ROS + Initializing workspace + installing TurtleSim" | 20-08-2019 |

@@ -1,0 +1,8 @@
+prefix=/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/devel
+
+Name: driver
+Description: Description of driver
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/devel/lib 
+Requires: 

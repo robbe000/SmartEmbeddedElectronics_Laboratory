@@ -14,3 +14,4 @@
 | Initializing Git Repo + Creating a readme | 20-08-2019 |
 | Install ROS + Initializing workspace + installing TurtleSim" | 20-08-2019 |
 | reinitializing project after problems with ROS | 22-08-2019 |
+| playing around with topic communication to turtlesim | 23-08-2019 |

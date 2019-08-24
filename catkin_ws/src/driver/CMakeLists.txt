@@ -8,6 +8,8 @@ project(driver)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  cv_bridge
+  image_transport
   roscpp
   rospy
   std_msgs
@@ -15,7 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
+find_package(OpenCV REQUIRED)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -105,7 +107,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES driver
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+  CATKIN_DEPENDS cv_bridge image_transport roscpp std_msgs
 #  DEPENDS system_lib
 )
 
@@ -208,3 +210,7 @@ include_directories(
 add_executable(drive src/drive.cpp)
 target_link_libraries(drive ${catkin_LIBRARIES})
 add_dependencies(drive driver_generate_messages_cpp)
+
+add_executable(detection src/detection.cpp)
+target_link_libraries(detection ${catkin_LIBRARIES} ${OpenCV_LIBS})
+add_dependencies(detection detection_generate_messages_cpp)

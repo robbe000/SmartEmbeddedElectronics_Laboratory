@@ -8,5 +8,4 @@
 
 # modified environment variables
 export PATH="/opt/ros/melodic/bin:/home/robbe/anaconda3/bin:/home/robbe/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-export PKG_CONFIG_PATH="/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/build"

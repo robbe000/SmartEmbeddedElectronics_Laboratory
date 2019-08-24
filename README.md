@@ -17,3 +17,4 @@
 | playing around with topic communication to turtlesim | 23-08-2019 |
 | creating the search pattern | 24-08-2019 |
 | detecting the red ball from a live webcam feed | 25-08-2019 |
+| inserting the opencv code into the ros detection node | 25-08-2019 |

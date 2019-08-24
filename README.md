@@ -16,3 +16,4 @@
 | reinitializing project after problems with ROS | 22-08-2019 |
 | playing around with topic communication to turtlesim | 23-08-2019 |
 | creating the search pattern | 24-08-2019 |
+| detecting the red ball from a live webcam feed | 25-08-2019 |

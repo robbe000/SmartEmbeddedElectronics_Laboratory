@@ -305,6 +305,24 @@ driver_BINARY_DIR:STATIC=/home/robbe/Documents/github/SmartEmbeddedElectronics_L
 //Value Computed by CMake
 driver_SOURCE_DIR:STATIC=/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/src/driver
 
+//The directory containing a CMake configuration file for gencpp.
+gencpp_DIR:PATH=/opt/ros/melodic/share/gencpp/cmake
+
+//The directory containing a CMake configuration file for geneus.
+geneus_DIR:PATH=/opt/ros/melodic/share/geneus/cmake
+
+//The directory containing a CMake configuration file for genlisp.
+genlisp_DIR:PATH=/opt/ros/melodic/share/genlisp/cmake
+
+//The directory containing a CMake configuration file for genmsg.
+genmsg_DIR:PATH=/opt/ros/melodic/share/genmsg/cmake
+
+//The directory containing a CMake configuration file for gennodejs.
+gennodejs_DIR:PATH=/opt/ros/melodic/share/gennodejs/cmake
+
+//The directory containing a CMake configuration file for genpy.
+genpy_DIR:PATH=/opt/ros/melodic/share/genpy/cmake
+
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/melodic/share/geometry_msgs/cmake
 
@@ -365,6 +383,9 @@ lib:FILEPATH=/opt/ros/melodic/lib/librospack.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/melodic/share/message_filters/cmake
+
+//The directory containing a CMake configuration file for message_generation.
+message_generation_DIR:PATH=/opt/ros/melodic/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake

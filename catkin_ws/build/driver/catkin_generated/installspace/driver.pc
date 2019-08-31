@@ -3,6 +3,6 @@ prefix=/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_w
 Name: driver
 Description: Description of driver
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/install/include
 Libs: -L/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/install/lib 
 Requires: cv_bridge image_transport roscpp std_msgs

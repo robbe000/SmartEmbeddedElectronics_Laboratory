@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -49,11 +50,10 @@ find_package(OpenCV REQUIRED)
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+   FILES
+   directions.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -70,10 +70,12 @@ find_package(OpenCV REQUIRED)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+  driver
+  sensor_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -209,8 +211,8 @@ include_directories(
 
 add_executable(drive src/drive.cpp)
 target_link_libraries(drive ${catkin_LIBRARIES})
-add_dependencies(drive driver_generate_messages_cpp)
+add_dependencies(drive generate_messages_cpp)
 
 add_executable(detection src/detection.cpp)
 target_link_libraries(detection ${catkin_LIBRARIES} ${OpenCV_LIBS})
-add_dependencies(detection detection_generate_messages_cpp)
+add_dependencies(detection generate_messages_cpp)

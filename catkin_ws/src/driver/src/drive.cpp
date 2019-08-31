@@ -7,8 +7,7 @@
 
 ros::Publisher velocity_publisher;
 
-void draai(int aantal) {
-  ROS_INFO("%s %d", "Draai:", aantal);
+void draai(float aantal) {
   geometry_msgs::Twist vel_msg;
 
   vel_msg.linear.x = 0;
@@ -19,8 +18,7 @@ void draai(int aantal) {
   velocity_publisher.publish(vel_msg);
 }
 
-void beweeg(int aantal) {
-  ROS_INFO("%s %d", "Beweeg:", aantal);
+void beweeg(float aantal) {
   geometry_msgs::Twist vel_msg;
 
   vel_msg.linear.x = aantal;
@@ -44,10 +42,10 @@ int zoek(int initstate) {
       draai(2);
       break;
     case 3:
-      draai(rand()%4+1);
+      draai(rand()%4+1.0);
       break;
     case 4:
-      beweeg(rand()%5+1);
+      beweeg(rand()%3+1.0);
       break;
     case 5:
       return 0;

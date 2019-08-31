@@ -38,12 +38,18 @@
   (status m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <directions>) ostream)
   "Serializes a message object of type '<directions>"
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'direction)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'direction)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    )
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'status)) ostream)
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <directions>) istream)
   "Deserializes a message object of type '<directions>"
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'direction)) (cl:read-byte istream))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'direction) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
     (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'status)) (cl:read-byte istream))
   msg
 )
@@ -55,19 +61,19 @@
   "driver/directions")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<directions>)))
   "Returns md5sum for a message object of type '<directions>"
-  "2ad149d8227f0e8133faeb3a94061d79")
+  "1c4878b49e480178b449ff864f10fa72")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'directions)))
   "Returns md5sum for a message object of type 'directions"
-  "2ad149d8227f0e8133faeb3a94061d79")
+  "1c4878b49e480178b449ff864f10fa72")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<directions>)))
   "Returns full string definition for message of type '<directions>"
-  (cl:format cl:nil "uint8 direction~%uint8 status~%~%"))
+  (cl:format cl:nil "int16 direction~%uint8 status~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'directions)))
   "Returns full string definition for message of type 'directions"
-  (cl:format cl:nil "uint8 direction~%uint8 status~%~%"))
+  (cl:format cl:nil "int16 direction~%uint8 status~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <directions>))
   (cl:+ 0
-     1
+     2
      1
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <directions>))

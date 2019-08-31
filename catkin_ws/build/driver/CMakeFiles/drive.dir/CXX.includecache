@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/devel/include/driver/directions.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/src/driver/src/drive.cpp
 ros/ros.h
 /home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/src/driver/src/ros/ros.h
@@ -13,10 +29,14 @@ std_msgs/String.h
 /home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/src/driver/src/std_msgs/String.h
 geometry_msgs/Twist.h
 /home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/src/driver/src/geometry_msgs/Twist.h
+string
+-
 time.h
 -
 sstream
 -
+driver/directions.h
+/home/robbe/Documents/github/SmartEmbeddedElectronics_Laboratory/catkin_ws/src/driver/src/driver/directions.h
 
 /opt/ros/melodic/include/geometry_msgs/Twist.h
 string

@@ -35,8 +35,8 @@
   (:serialization-length
    ()
    (+
-    ;; uint8 _direction
-    1
+    ;; int16 _direction
+    2
     ;; uint8 _status
     1
     ))
@@ -44,31 +44,31 @@
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; uint8 _direction
-       (write-byte _direction s)
+     ;; int16 _direction
+       (write-word _direction s)
      ;; uint8 _status
        (write-byte _status s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; uint8 _direction
-     (setq _direction (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; int16 _direction
+     (setq _direction (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;; uint8 _status
      (setq _status (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;;
    self)
   )
 
-(setf (get driver::directions :md5sum-) "2ad149d8227f0e8133faeb3a94061d79")
+(setf (get driver::directions :md5sum-) "1c4878b49e480178b449ff864f10fa72")
 (setf (get driver::directions :datatype-) "driver/directions")
 (setf (get driver::directions :definition-)
-      "uint8 direction
+      "int16 direction
 uint8 status
 ")
 
 
 
-(provide :driver/directions "2ad149d8227f0e8133faeb3a94061d79")
+(provide :driver/directions "1c4878b49e480178b449ff864f10fa72")
 
 

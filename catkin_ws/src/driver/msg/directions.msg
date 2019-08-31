@@ -1,2 +1,2 @@
-uint8 direction
+int16 direction
 uint8 status

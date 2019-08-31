@@ -35,7 +35,7 @@ struct directions_
 
 
 
-   typedef uint8_t _direction_type;
+   typedef int16_t _direction_type;
   _direction_type direction;
 
    typedef uint8_t _status_type;
@@ -119,12 +119,12 @@ struct MD5Sum< ::driver::directions_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "2ad149d8227f0e8133faeb3a94061d79";
+    return "1c4878b49e480178b449ff864f10fa72";
   }
 
   static const char* value(const ::driver::directions_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x2ad149d8227f0e81ULL;
-  static const uint64_t static_value2 = 0x33faeb3a94061d79ULL;
+  static const uint64_t static_value1 = 0x1c4878b49e480178ULL;
+  static const uint64_t static_value2 = 0xb449ff864f10fa72ULL;
 };
 
 template<class ContainerAllocator>
@@ -143,7 +143,7 @@ struct Definition< ::driver::directions_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "uint8 direction\n"
+    return "int16 direction\n"
 "uint8 status\n"
 ;
   }
@@ -184,7 +184,7 @@ struct Printer< ::driver::directions_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::driver::directions_<ContainerAllocator>& v)
   {
     s << indent << "direction: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.direction);
+    Printer<int16_t>::stream(s, indent + "  ", v.direction);
     s << indent << "status: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.status);
   }

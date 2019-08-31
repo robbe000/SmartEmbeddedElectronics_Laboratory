@@ -19,3 +19,4 @@
 | detecting the red ball from a live webcam feed | 25-08-2019 |
 | inserting the opencv code into the ros detection node | 25-08-2019 |
 | publishing and fine tuning detection data | 31-09-2019 |
+| connecting the detection node with the driver node 31-09-2019 |

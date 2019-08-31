@@ -7,13 +7,13 @@ import struct
 
 
 class directions(genpy.Message):
-  _md5sum = "2ad149d8227f0e8133faeb3a94061d79"
+  _md5sum = "1c4878b49e480178b449ff864f10fa72"
   _type = "driver/directions"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """uint8 direction
+  _full_text = """int16 direction
 uint8 status"""
   __slots__ = ['direction','status']
-  _slot_types = ['uint8','uint8']
+  _slot_types = ['int16','uint8']
 
   def __init__(self, *args, **kwds):
     """
@@ -53,7 +53,7 @@ uint8 status"""
     """
     try:
       _x = self
-      buff.write(_get_struct_2B().pack(_x.direction, _x.status))
+      buff.write(_get_struct_hB().pack(_x.direction, _x.status))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -66,8 +66,8 @@ uint8 status"""
       end = 0
       _x = self
       start = end
-      end += 2
-      (_x.direction, _x.status,) = _get_struct_2B().unpack(str[start:end])
+      end += 3
+      (_x.direction, _x.status,) = _get_struct_hB().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -81,7 +81,7 @@ uint8 status"""
     """
     try:
       _x = self
-      buff.write(_get_struct_2B().pack(_x.direction, _x.status))
+      buff.write(_get_struct_hB().pack(_x.direction, _x.status))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -95,8 +95,8 @@ uint8 status"""
       end = 0
       _x = self
       start = end
-      end += 2
-      (_x.direction, _x.status,) = _get_struct_2B().unpack(str[start:end])
+      end += 3
+      (_x.direction, _x.status,) = _get_struct_hB().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -105,9 +105,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2B = None
-def _get_struct_2B():
-    global _struct_2B
-    if _struct_2B is None:
-        _struct_2B = struct.Struct("<2B")
-    return _struct_2B
+_struct_hB = None
+def _get_struct_hB():
+    global _struct_hB
+    if _struct_hB is None:
+        _struct_hB = struct.Struct("<hB")
+    return _struct_hB

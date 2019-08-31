@@ -89,6 +89,7 @@ int main(int argc, char **argv)
 
           cout << "Center: " << p << " w:" << image.cols << endl;
           punt = p.x - image.cols/2;
+          punt = punt*(-1);
 
           cout << "Punt: " << punt << endl;
           circle(image, p, 3, Scalar(0, 255, 0), 3);
@@ -102,7 +103,7 @@ int main(int argc, char **argv)
               infoText = "Niets gevonden!";
               cout << "Blob is te klein" << endl;
               status = 0;
-          }else if(grote > 500) {
+          }else if(grote > 700) {
               infoText = "We zijn er!";
               cout << "We zijn er!" << endl;
               status=2;

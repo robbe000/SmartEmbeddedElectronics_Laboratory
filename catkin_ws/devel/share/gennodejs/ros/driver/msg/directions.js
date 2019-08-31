@@ -40,7 +40,7 @@ class directions {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type directions
     // Serialize message field [direction]
-    bufferOffset = _serializer.uint8(obj.direction, buffer, bufferOffset);
+    bufferOffset = _serializer.int16(obj.direction, buffer, bufferOffset);
     // Serialize message field [status]
     bufferOffset = _serializer.uint8(obj.status, buffer, bufferOffset);
     return bufferOffset;
@@ -51,14 +51,14 @@ class directions {
     let len;
     let data = new directions(null);
     // Deserialize message field [direction]
-    data.direction = _deserializer.uint8(buffer, bufferOffset);
+    data.direction = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [status]
     data.status = _deserializer.uint8(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 2;
+    return 3;
   }
 
   static datatype() {
@@ -68,13 +68,13 @@ class directions {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '2ad149d8227f0e8133faeb3a94061d79';
+    return '1c4878b49e480178b449ff864f10fa72';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    uint8 direction
+    int16 direction
     uint8 status
     `;
   }

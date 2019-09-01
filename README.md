@@ -9,14 +9,14 @@
 
 ## Log
 
-| What        	| When          |
+| What          | When          |
 | ------------- |---------------|
 | Initializing Git Repo + Creating a readme | 20-08-2019 |
 | Install ROS + Initializing workspace + installing TurtleSim" | 20-08-2019 |
-| reinitializing project after problems with ROS | 22-08-2019 |
-| playing around with topic communication to turtlesim | 23-08-2019 |
-| creating the search pattern | 24-08-2019 |
-| detecting the red ball from a live webcam feed | 25-08-2019 |
-| inserting the opencv code into the ros detection node | 25-08-2019 |
-| publishing and fine tuning detection data | 31-09-2019 |
-| connecting the detection node with the driver node 31-09-2019 |
+| Reinitializing project after problems with ROS | 22-08-2019 |
+| Playing around with topic communication to TurtleSim | 23-08-2019 |
+| Creating the search pattern | 24-08-2019 |
+| Detecting the red ball from a live webcam feed | 25-08-2019 |
+| Inserting the opencv code into the ros detection node | 25-08-2019 |
+| Publishing and fine tuning detection data | 31-09-2019 |
+| Connecting the detection node with the driver node | 31-09-2019 |
